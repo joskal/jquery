@@ -38,7 +38,8 @@ $("img").addClass("img-thumbnail");
 ```
 Pero ya en esta otra, con el encadenamiento, el DOM recorre la pagina una sola vez.
 ```js
-$("img").attr("src","img/profesor.jpg")
+$("img")
+   .attr("src","img/profesor.jpg")
    .removeClass("img-circle")
    .addClass("img-thumbnail");
 ```
