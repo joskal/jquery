@@ -9,7 +9,17 @@
 	
 	<!-- Importacion del Bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-
+	<style type="text/css">
+		.img100{
+			width: 100px;
+			height: 100px;
+		}
+		.divRojo{
+			background-color: red;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
 
 </head>
 <body>
@@ -20,18 +30,51 @@
 	<h1>Lección 03: Eventos</h1>
 	<hr>
 	<div id="bot1" class="btn btn-primary">Boton</div>
-	
-
-
+	<br><br>
+	<img class="img100" src="img/profesor.jpg">
+	<br><br>
+	<div class="divRojo"></div>	
+	<br><br>
+	<a id="linkUdemy" href="http://www.udemy.com">Udemy</a>
 </div>
 
 
 <script>
 	$('#bot1').on("click",function(){
 		console.log("click en el boton!!");
-	});	
+	});
+
+	$('.img100').on('mouseenter',function(){
+		// $('.img100').attr('src','img/nophoto.jpg');
+		$(this).attr('src','img/nophoto.jpg');
+		console.log('Entro mouse enter');
+	});
 
 
+	$('.img100').on('mouseleave',function(){
+		$(this).attr('src','img/profesor.jpg');
+		console.log('Salio mouse leave');
+	});
+
+	$('.divRojo').on('click',function(){
+		console.log('click en div rojo');
+	})
+
+	//Controles especiales para links
+	//Impedir comportamiento por defecto: event.preventDefault();
+	$("#linkUdemy").on("click",function(e){
+		e.preventDefault();
+		console.log("click on link...");
+
+		var link = $(this).attr("href");
+		console.log(link);
+
+		// window.location=link;
+	});
+
+	$(document).ready(function(){
+		console.log("La pagina esta lista para lo que sea");
+	});
 
 </script>
 
