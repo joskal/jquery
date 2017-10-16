@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Lección 05 - On y Bind</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		h3{
+			cursor: pointer;
+		}
+	</style>
+
+</head>
+<body>
+
+
+<div class="container">
+	
+	<h1>Tarea: <small>Tabla de multiplicar del </small></h1>
+	<hr>
+	<button id="multi" class="btn btn-primary">Agregar Linea</button>
+	<br><br>
+	<table id="tabla" class="table table-striped">
+		<tr> <th>Base</th> <th>X</th> <th>Numero</th> <th>=</th> <th>Resultado</th> </tr>
+	</table>
+
+</div>
+
+<script type="text/javascript">
+	(function(){
+		var i=0, linea="", base=7;
+		$("small").append(base);
+
+		$("#multi").on("click",function(){
+			i++;
+			linea="<tr> <td>"+base+"</td> <td>X</td> <td>"+i+"</td> <td>=</td> <td>"+(base*i)+"</td> </tr>";
+			$("#tabla").append(linea);
+			console.log(linea);
+		});
+	})();
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
