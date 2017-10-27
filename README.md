@@ -59,6 +59,14 @@ $("ul li")
   .eq(3).css("color","purple").end()
   .eq(4).css("color","green").end();
  ```
+ Agregar una clase a un id 
+ ```js
+$("#ident").addClass("rojo")
+ ```
+ Eliminar una clase de un id
+ ```js
+$("#ident").removeClass("rojo")
+ ```
  Agregar una clase a cada elemento de la lista
 ```js
 $("ul li")
