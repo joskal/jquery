@@ -43,7 +43,86 @@ $("img")
    .removeClass("img-circle")
    .addClass("img-thumbnail");
 ```
-### Modificar elementos
+### Seleccionar elementos
+#### Selectores b&aacute;sicos.
+Con el “.” seleccionamos una clase, con el “#” seleccionamos un id y con el tag de la etiqueta una etiqueta
+```js
+/* Seleccionar etiquetas del DOM */
+$("elemento")
+/* Seleccionar id del DOM */
+$("#idelemento")
+/* Seleccionar clase del DOM */
+$(".claseelemento")
+
+/* seleccionar las etiquetas "p" */
+$("p")
+
+/* seleccionar los elementos con id="inicio" */
+$("#inicio")
+
+/* seleccionar los elementos con clase="principal" */
+$(".principal")
+
+/* seleccionar los elementos con id="inicio" con clase="principal" y que son etiqueta "p" */
+$("p#inicio.principal")
+
+/* seleccionar las etiquetas "a" con clase="principal" dentro de una etiqueta "p" */
+$("p a.principal")
+
+/* seleccionar los elementos con id="inicio" o clase ="principal" */
+$("#inicio,.principal")
+
+/* seleccionar todos los elementos */
+$("*")
+
+/* seleccionar todas las etiquetas "p", "a" y "div" */
+$("p,a,div")
+```
+
+Seleccionar una posición dentro de un elemento padre:
+```js
+/* seleccionar el quinto elemento de una lista, el indice comienza en 0 */
+$("ul li:eq(4)")	
+
+/* seleccionar todos los elementos de una lista a partir de elemento 3, el indice comienza en 0 */
+$("ul li:gt(2)")
+
+/* seleccionar todos los elementos de una lista anteriores del elemento 4, el indice comienza en 0 */
+$("ul li:lt(3)")
+```
+Seleccionar seg&uacute;n el tipo de atributo
+```js
+/* seleccionar los elementos con el atributo href */
+$("[href]")
+/* seleccionar los elementos con el atributo src */
+$("[src]")
+/* seleccionar los elementos con el atributo class */
+$("[class]")
+/* seleccionar los elementos con el atributo id */
+$("[id]")
+
+/* seleccionar elementos con atributo href=index.html */
+$("[href='index.html']")
+ 
+/* seleccionar elementos con atributo href distinto a index.html */
+$("[href!='index.html']")
+ 
+/* seleccionar elementos con atributo src que finalicen con .png */
+$("[src$='.png']")
+ 
+/* seleccionar elementos con atributo src que comiencen con 'imagen.jpg' o con atributo src ='imagen.jpg' */
+$("[src|='imagen.jpg']")
+ 
+/* seleccionar elementos con atributo title que comiencen con 'alergia' */
+$("[title^='alergia']")
+ 
+/* seleccionar elementos con atributo title que contengan la palabra específica 'alergia' */
+$("[title~='alergia']")
+ 
+/* seleccionar elementos con atributo title que contengan la palabra 'alergia' */
+$("[title*='alergia']")
+```
+
 Modificar el html de los tags **p** contenidos en el elemento div que tiene la clase **.prueba**
 ```js
 $(".prueba")
