@@ -90,6 +90,18 @@ $("ul li:gt(2)")
 /* seleccionar todos los elementos de una lista anteriores del elemento 4, el indice comienza en 0 */
 $("ul li:lt(3)")
 ```
+Seleccionar contenedores e hijos
+```js
+/*Seleccionamos los <a> dentro de los paafos <p> */
+$("p > a")
+
+/*Seleccionamos los enlaces dentro de los parrafos contenidos en la clase miclase de una lista*/
+$("ul.miclase li > p > a")
+
+/*Seleccionamos los enlaces precedidos inmediatamente del elemento div*/
+$("div + a")
+```
+
 Seleccionar seg&uacute;n el tipo de atributo
 ```js
 /* seleccionar los elementos con el atributo href */
@@ -122,6 +134,8 @@ $("[title~='alergia']")
 /* seleccionar elementos con atributo title que contengan la palabra 'alergia' */
 $("[title*='alergia']")
 ```
+
+
 
 Modificar el html de los tags **p** contenidos en el elemento div que tiene la clase **.prueba**
 ```js
