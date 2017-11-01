@@ -20,3 +20,12 @@ $(document).ready(function(){
      });
 });
 ```
+Asignaci&oacute;n de varios eventos a un elemento.
+```js
+/*Detectar los eventos dblclick y change (cambio de valor)*/
+$(document).ready(function(){
+  $("#elementocontrolado").on("dblclick change",function(){
+    alert('Función on() activada.');
+  });
+});
+```
