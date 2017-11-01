@@ -43,9 +43,8 @@ $("img")
    .removeClass("img-circle")
    .addClass("img-thumbnail");
 ```
-### Seleccionar elementos
+### Selectores
 #### Selectores b&aacute;sicos.
-Con el “.” seleccionamos una clase, con el “#” seleccionamos un id y con el tag de la etiqueta una etiqueta
 ```js
 /* Seleccionar etiquetas del DOM */
 $("elemento")
@@ -79,7 +78,7 @@ $("*")
 $("p,a,div")
 ```
 
-Seleccionar una posición dentro de un elemento padre:
+#### Selectores de posici&oacute;n
 ```js
 /* seleccionar el quinto elemento de una lista, el indice comienza en 0 */
 $("ul li:eq(4)")	
@@ -90,7 +89,7 @@ $("ul li:gt(2)")
 /* seleccionar todos los elementos de una lista anteriores del elemento 4, el indice comienza en 0 */
 $("ul li:lt(3)")
 ```
-Seleccionar contenedores e hijos
+#### Selectores de contenedores e hijos
 ```js
 /*Seleccionamos los <a> dentro de los paafos <p> */
 $("p > a")
@@ -103,9 +102,12 @@ $("div + a")
 
 /*Seleccionamos los enlaces (elemento ‘a’) prececidos por cualquier hermano suyo en un ‘div'*/
 $("div ~ a")
+
+/*Seleccionamos cualquier elemento del DOM*/
+$("*")
 ```
 
-Seleccionar seg&uacute;n el tipo de atributo
+#### Selectores de atributo
 ```js
 /* seleccionar los elementos con el atributo href */
 $("[href]")
@@ -141,7 +143,7 @@ $("[title~='alergia']")
 $("[title*='alergia']")
 ```
 
-
+#### Selectores, ejemplos.
 
 Modificar el html de los tags **p** contenidos en el elemento div que tiene la clase **.prueba**
 ```js
