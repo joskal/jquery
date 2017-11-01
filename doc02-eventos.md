@@ -29,3 +29,18 @@ $(document).ready(function(){
   });
 });
 ```
+Mapeo de eventos a un elemento del DOM
+```js
+$(document).ready(function(){
+  $("#elementocontrolado").on({
+    change:function(){alert('El input ha cambiado de valor');},
+    click:function(){alert('Has hecho click en el input');}
+  });
+});
+```
+
+# jQuery off()
+Nos permitir&aacute; eliminar eventos previamente asignados a un elemento
+```js
+$("p").off("click",changeSize);
+```
