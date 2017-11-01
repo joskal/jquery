@@ -100,6 +100,9 @@ $("ul.miclase li > p > a")
 
 /*Seleccionamos los enlaces precedidos inmediatamente del elemento div*/
 $("div + a")
+
+/*Seleccionamos los enlaces (elemento ‘a’) prececidos por cualquier hermano suyo en un ‘div'*/
+$("div ~ a")
 ```
 
 Seleccionar seg&uacute;n el tipo de atributo
@@ -115,6 +118,9 @@ $("[id]")
 
 /* seleccionar elementos con atributo href=index.html */
 $("[href='index.html']")
+
+/*Seleccionamos cualquier elemento del DOM*/
+$("*")
  
 /* seleccionar elementos con atributo href distinto a index.html */
 $("[href!='index.html']")
