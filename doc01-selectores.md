@@ -282,5 +282,3 @@ Eliminar una clase de un elemento de la lista
 $("ul li")
   .eq(0).removeClass('morado').end();
 ```
-
-## Eventos
