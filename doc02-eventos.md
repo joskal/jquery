@@ -1,6 +1,6 @@
 # jQuery on()
 Nos permite asignar eventos a los distintos elementos del DOM.
-## $(selector).on(evento, childSelector, parametros, funcion, mapeo)
+## $(selector).on(evento, [childSelector], [parametros], funcion, [mapeo])
 
 * **selector** (obligatorio): Elemento del DOM al que queremos asignar un evento.
 * **evento** (obligatorio): Evento que queremos controlar en el selector.
