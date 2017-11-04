@@ -4,6 +4,11 @@ Apuntes sobre jQuery
 ```js
 <script>
 jQuery('ul').addClass('textoVerde');
+</script>
+```
+
+```js
+<script>
 $('ul').addClass('textoVerde');
 </script>
 ```
