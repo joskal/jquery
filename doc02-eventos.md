@@ -46,6 +46,6 @@ En algunas ocasiones nos interesar&aacute; apagar los eventos de un elemento.
 **off()** Nos permitir&aacute; desconectar eventos previamente asignados a un elemento
 ```js
 $("#apagar").on("click", function(){
-  $("#botones").off("click");   /*Dejamos sin efecto los eventos de este id*/
+  $("#botones").off("click");   /*Dejamos sin efecto el evento 'click' de este id*/
 });
 ```
