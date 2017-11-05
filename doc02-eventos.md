@@ -41,8 +41,10 @@ $(document).ready(function(){
 });
 ```
 
-# jQuery off()
-Nos permitir&aacute; eliminar eventos previamente asignados a un elemento
+En algunas ocasiones nos interesar&aacute; apagar los eventos de un elemento
+**off() Nos permitir&aacute; desconectar eventos previamente asignados a un elemento
 ```js
-$("p").off("click",changeSize);
+$("#apagar").on("click", function(){
+  $("botones").off("click");
+});
 ```
