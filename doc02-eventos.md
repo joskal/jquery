@@ -41,10 +41,11 @@ $(document).ready(function(){
 });
 ```
 
-En algunas ocasiones nos interesar&aacute; apagar los eventos de un elemento
-**off() Nos permitir&aacute; desconectar eventos previamente asignados a un elemento
+En algunas ocasiones nos interesar&aacute; apagar los eventos de un elemento.
+
+**off()** Nos permitir&aacute; desconectar eventos previamente asignados a un elemento
 ```js
 $("#apagar").on("click", function(){
-  $("botones").off("click");
+  $("#botones").off("click");   /*Dejamos sin efecto los eventos de este id*/
 });
 ```
