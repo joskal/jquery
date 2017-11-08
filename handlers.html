@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Eventos jQuery</title>
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<style type="text/css">
+		body{
+			text-align: center;
+			margin: 0 auto;
+		}
+		#cuadrado{
+			width: 200px;
+			min-height: 200px;
+			background: #000;
+			text-align: center;
+			margin: 30px auto;
+			transition: all .3s;
+		}
+		#target{
+			width: 200px;
+			min-height: 200px;
+			background: #000;
+			text-align: center;
+			margin: 30px auto;
+			transition: all .3s;
+		}
+		#botones a{
+			padding: 10px;
+			font-size: 30px;
+			background: #333;
+			color: #fff;
+		}
+		.active{
+			font-weight: bold;
+			border: 2px solid #000;
+		}
+		#cuadrado.yellow{
+			background: yellow;
+		}
+		#target.red{
+			background: tomato;
+		}
+		#target.green{
+			background: seagreen;
+		}
+		#target.blue{
+			background: steelblue;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery Events</h1>		
+	<p>Fundamentos, handlers, .on(), .off(), delegacion, triggering</p>
+	<div class="" id="cuadrado"></div>
+	<div class="" id="target"></div>
+
+	<div id="botones">
+		<a id="btnblue" href="#" value='blue'>Blue</a>
+		<a id="btnred" href="#" value='red'>Red</a>
+		<a id="btngreen" href="#" value='green'>Green</a>
+		<a id="btnplaceholder" href="#">Placeholder</a>
+		<a id="btnoff" href="#">off()</a>
+	</div><!-- /#botones -->
+
+
+	<script type="text/javascript">
+		$("#cuadrado").on("click", function(){
+			alert("click");
+		});
+
+		$('#cuadrado').on("mouseenter mouseleave", function(){
+			$(this).toggleClass('yellow');
+		});
+
+
+
+		// $('#btnblue').on('click',function(){
+		// 	$('#target').removeClass().addClass('blue');
+		// 	$(this).addClass('active');
+		// 	$(this).siblings().removeClass('active');
+		// });
+		// $('#btnred').on('click',function(){
+		// 	$('#target').removeClass().addClass('red');
+		// 	$(this).addClass('active');
+		// 	$(this).siblings().removeClass('active');
+		// });
+		// $('#btngreen').on('click',function(){
+		// 	$('#target').removeClass().addClass('green');
+		// 	$(this).addClass('active');
+		// 	$(this).siblings().removeClass('active');
+		// });
+		// $('#btnplaceholder').on('click',function(){
+		// 	$('#btnblue').trigger('click');
+		// })
+		// $('#btnoff').on('click',function(){
+		// 	$('#botones').removeClass();
+		// 	$('#btnblue').off('click');
+		// 	console.log($(this));
+		// })
+
+
+		/*Con delegacion de eventos*/
+
+		 $('#botones').on('click','a', function(e){
+		 	$('#target')
+		 		.removeClass()
+		 		.addClass($(this).attr('value'));
+		 	$(this)
+		 		.siblings().removeClass('active').end()
+		 		.addClass('active');
+		 	// console.log($(this).attr('value'));
+		 	console.log(e);
+		 })
+	</script>
+</body>
+</html>

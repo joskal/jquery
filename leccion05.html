@@ -40,12 +40,10 @@
 			//$(".container").prepend(): Agregar dentro de .container y al principio de este.
 			//$(".container").append(): Agregar dentro de .container y al final de este.
 			$(".container").append(h3dinamico);
-			
-			if(i===3){
-				$("h3-2").bind("click",function(){
-					console.log("Funcion dinamica");
+			console.log(i);
+				$("#h3-2").on("click",function(){
+					console.log("Funcion dinamica h3-2");
 				});
-			}
 		});
 	})();
 
