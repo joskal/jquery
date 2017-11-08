@@ -29,6 +29,9 @@ $(".claseelemento")
 /* seleccionar las etiquetas "p" */
 $("p")
 
+/*seleccionar las etiquetas p dentro de la clase .container*/
+$(.container p)
+
 /* seleccionar los elementos con id="inicio" */
 $("#inicio")
 
