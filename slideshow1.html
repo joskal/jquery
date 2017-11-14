@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Slider</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<!-- <script src="js/lib/TweenMax.m in.js"></script> -->
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	
+	<style type="text/css">
+		.slideShow{
+			background-color: red;
+			width: 600px;
+			height: 300px;
+			overflow: hidden;
+			margin-bottom: 10px;
+		}
+		.slideShow ul{
+			padding: 0;
+			list-style-type: none;
+			margin-left: 0px;
+			display: flex;
+		}
+	</style>
+
+</head>
+<body>
+
+
+<div class="container" align="center">
+	
+	<h1>Slideshow</h1>
+	<hr>
+	<div class="slideShow">
+		<ul>
+			<li><img src="img/slide1.png" alt="" /></li>
+			<li><img src="img/slide2.png" alt="" /></li>
+			<li><img src="img/slide3.png" alt="" /></li>
+			<li><img src="img/slide4.png" alt="" /></li>
+		</ul>
+	</div><!-- /.slideShow -->
+	<button data-mov="prev" class="btn btn-primary botSlide">Prev</button>
+	<button data-mov="next" class="btn btn-primary botSlide">Next</button>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</div>
+
+
+<script>
+	(function(){
+		 var actual 	= 0;
+		 var ancho 		= 600;
+		 var $slideshow = $(".slideShow ul")
+		 var slides 	= $slideshow.find("li").length;
+		 var intervalo	= setInterval(function(){
+		 	mover("next");
+		 },1500);
+
+		 function mover( dir, pulsar ){
+		 	var margen 	= 0;
+		 	if(pulsar) clearInterval(intervalo);
+
+		 	( dir === "next" ) ? actual-- : actual++;
+		 	if(actual > 0){
+		 		actual = (slides - 1) * -1;
+		 	}else if(actual <= (slides * - 1) ){
+		 		actual = 0;
+		 	}
+
+		 	margen = actual * ancho;
+		 	console.log("margen: " + margen);
+		 	console.log("actual: " + actual);
+		 	$slideshow.animate({
+		 		marginLeft: margen 
+		 	}, 450);
+		 }
+
+		 $(".botSlide").on("click", function(){
+		 	var dir = $(this).data("mov");
+		 	console.log("dir: " + dir);
+		 	mover(dir, true);
+		 })
+	})();
+</script>
+
+
+</body>
+</html>

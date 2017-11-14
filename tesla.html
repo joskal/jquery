@@ -45,7 +45,7 @@
 	
 	
 	<div class="divVistaPrevia">
-		<img id="imgCarro" src="img/tesla/modelS-blanco.jpg" class="img-responsive">
+		<img id="imgCarro" class="img-responsive">
 	</div>
 
 	<div class="form-group">
@@ -61,40 +61,49 @@
 
 
 <script>
-	
 (function(){
 	var teslaView = {
-		colores: ['blanco','rojo','cafe','verde','negro'],
+			loader: $(".divPreloader"),
+			colores: ['blanco','rojo','cafe','verde','negro'],
+			cambiarColor: function(img){
+				var $loader = teslaView.loader;
+				$loader.fadeIn(150);
+				if(img === undefined){
+					color 	= teslaView.colores[0];
+					img 	= "img/tesla/modelS-" + color + ".jpg";
+					 
+				}
 
-		cambiarColor: function(img){
-			$("<img>",{
-				src: img,
-				class: "img-responsive",
-			}).load(function(){
-				console.log("Imagen cargada");
-			});
-		},
+				$("<img>",{
+					src: img,
+					class: "img-responsive",
+				}).load(function(){
+					console.log("Imagen cargada");
+					$(".divVistaPrevia").find("img").remove();
+					$(this).appendTo(".divVistaPrevia");
+					$loader.fadeOut(150);
+				});
 
-		init: function(opciones){
-			$.extend(teslaView, opciones);
-			for (var i = 0; i < teslaView.colores.length; i++) {
-				var color = teslaView.colores[i];
-				$("<option>",{
-					value: color,
-					text:  color,
-				}).appendTo('#cmbColor');
+			},
+			init: function(opciones){
+				$.extend(teslaView, opciones);
+				for (var i = 0; i < teslaView.colores.length; i++) {
+					var color = teslaView.colores[i];
+					$("<option>",{
+						value: color,
+						text:  color,
+					}).appendTo('#cmbColor');
+				}
+				$("#cmbColor").on("change", function(){
+					var color 	= $(this).val();
+					var url		= "img/tesla/modelS-" + color + ".jpg";
+					teslaView.cambiarColor( url );
+					// $("#imgCarro").attr("src", url);
+				});
+				teslaView.cambiarColor();
+
 			}
-	
-		$("#cmbColor").bind("change", function(){
-			var color 	= $(this).val();
-			var url		= "img/tesla/modelS-" + color + ".jpg";
-		$("#imgCarro").attr("src", url);
-		// teslaView.cambiarColor( url );
-		});
-
-		}
 	}; //end var teslaView
-	
 
 	teslaView.init({colores: ['blanco','rojo','rojooscuro','gris','cafe','verde','negro']});
 

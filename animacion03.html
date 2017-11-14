@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Animaciones</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<style type="text/css">
+		.cajaRoja{
+			position: relative;
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			float: left;
+			margin-right: 10px;
+		}
+		.cajaAzul{
+			position: relative;
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+			float: left;
+			margin-right: 10px;
+		}		
+	</style>
+
+</head>
+<body>
+
+
+<div class="container">
+	
+	<h1>Animaciones: <small>jQuery Animate</small></h1>
+	<hr>
+
+	<button data-dir="arriba" 	 class="btn btn-primary">Arriba</button>
+	<button data-dir="abajo"  	 class="btn btn-primary">Abajo</button>
+	<button data-dir="izquierda" class="btn btn-primary">Izquierda</button>
+	<button data-dir="derecha" 	 class="btn btn-primary">Derecha</button>
+	<button data-dir="reset" 	 class="btn btn-danger" >Reset</button>
+	<button data-dir="ancho"  id="botAncho" 		 class="btn btn-info">Ancho y Color</button>
+	<br><br>
+	<div class="cajaRoja"></div>
+	<div class="cajaAzul"></div>
+
+</div>
+
+<script src="js/animaciones_tl.js"></script>
+
+</body>
+</html>
