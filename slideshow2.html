@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Slider</title>
+	<title>Slider Greensock</title>
 
 	<!-- Importacion del jQuery -->
 	<script src="js/lib/jquery-2.1.4.min.js"></script>
 
-	<!-- <script src="js/lib/TweenMax.m in.js"></script> -->
+	<script src="js/lib/TweenMax.min.js"></script>
 	
 	<!-- Importacion del Bootstrap -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -71,7 +71,7 @@
 
 		 function mover( dir, pulsar ){
 		 	var margen 	= 0;
-		 	// if(pulsar) clearInterval(intervalo);
+		 	if(pulsar) clearInterval(intervalo);
 
 		 	( dir === "next" ) ? actual-- : actual++;
 		 	if(actual > 0){
@@ -81,17 +81,16 @@
 		 	}
 
 		 	margen = actual * ancho;
+		 	var tl = new TimelineMax();
+		 	tl.to( $slideshow, 1.2,{ marginLeft: margen,ease: Elastic.easeOut.config(1, 0.75)})
+
 		 	console.log("margen: " + margen);
 		 	console.log("actual: " + actual);
-		 	$slideshow.animate({
-		 		marginLeft: margen 
-		 	}, 450);
 		 }
 
 		 $(".botSlide").on("click", function(){
 		 	var dir = $(this).data("mov");
 		 	console.log("dir: " + dir);
-		 	clearInterval(intervalo);
 		 	mover(dir, true);
 		 })
 	})();
