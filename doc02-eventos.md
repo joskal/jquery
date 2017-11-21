@@ -25,19 +25,22 @@ $(document).ready(function(){
 Asignaci&oacute;n de varios eventos a un elemento.
 ```js
 /*Detectar los eventos dblclick y change (cambio de valor)*/
-$(document).ready(function(){
-  $("#elementocontrolado").on("dblclick change",function(){
-    alert('Función on() activada.');
-  });
+$("#elementocontrolado").on("dblclick change",function(){
+  alert('Función on() activada.');
 });
 ```
 Mapeo de eventos a un elemento del DOM
 ```js
-$(document).ready(function(){
-  $("#elementocontrolado").on({
-    change:function(){alert('El input ha cambiado de valor');},
-    click:function(){alert('Has hecho click en el input');}
-  });
+$("#elementocontrolado").on({
+  change:function(){alert('El input ha cambiado de valor');},
+  click:function(){alert('Has hecho click en el input');}
+});
+```
+Otro ejemplo de mapeo de eventos:
+```js
+$(".slideshow").on({
+  mouseenter: function(){ clearInterval(timer)},
+  mouseleave: function(){ start_timer()}
 });
 ```
 
