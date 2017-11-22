@@ -44,6 +44,18 @@ $(".slideshow").on({
 });
 ```
 
+Podemos invocar un evento definido para cualquier selector con **trigger**
+```js
+$(".slideshow").on({
+  mouseenter: function(){ clearInterval(timer)},
+  mouseleave: function(){ start_timer()}
+});
+//trigger debe colocarse despues del evento del selector que se quiere invocar.
+$(".slideshow").trigger("mouseleave");
+
+```
+
+
 En algunas ocasiones nos interesar&aacute; apagar los eventos de un elemento.
 
 **off()** Nos permitir&aacute; desconectar eventos previamente asignados a un elemento
