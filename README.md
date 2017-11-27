@@ -39,5 +39,5 @@ Consiste en usar una funcion an&oacute;nima y autoejecutable **(function(){ })()
 (function(){
   var a="'a' es Local dentro de una función anónima";
   alert(a);
-}());
+})();
 ```
